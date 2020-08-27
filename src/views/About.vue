@@ -1,4 +1,4 @@
-<template xmlns="">
+<template>
   <div class="about">
     <h1>This is an about page</h1>
     <van-button type="info">我是按钮</van-button>
@@ -24,8 +24,7 @@ Vue.use(Swipe);
 Vue.use(SwipeItem);
 
 export default {
-  name: "about",
-  comments: {}
+  name: "about"
 };
 </script>
 
