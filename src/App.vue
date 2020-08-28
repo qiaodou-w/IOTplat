@@ -6,7 +6,10 @@
 </template>
 
 <script>
-// import Vue from "vue";
+import Vue from "vue";
+import { NavBar } from "vant";
+Vue.use(NavBar);
+
 import MainTabBar from "./components/content/MainTabBar";
 export default {
   components: { MainTabBar },

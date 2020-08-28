@@ -20,8 +20,8 @@ export default {
     }
   },
   methods: {
-    jump(){
-      this.$router.push("home/"+this.src.name)
+    jump() {
+      this.$router.push("home/" + this.src.name);
     }
   }
 };

@@ -9,12 +9,8 @@
 </template>
 
 <script>
-let moment = require("moment");
-import { NavBar } from "vant";
-import Vue from "vue";
+const moment = require("moment");
 import EnvironmentInfo from "../components/content/Info";
-
-Vue.use(NavBar);
 
 export default {
   name: "Home",

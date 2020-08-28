@@ -14,30 +14,30 @@ const routes = [
     path: "/home",
     name: "Home",
     component: Home,
-	  meta: {
-		  showTab: true//如果需要显示就加上这个
-	  }
+    meta: {
+      showTab: true //如果需要显示就加上这个
+    }
   },
   {
     path: "/home/:category",
     name: "EnvironmentDetail",
-	  component: EnvDetail
+    component: EnvDetail
   },
   {
     path: "/about",
     name: "About",
     component: () => import("../views/About.vue"),
-	  meta: {
-		  showTab: true
-	  }
+    meta: {
+      showTab: true
+    }
   },
   {
     path: "/control",
     name: "Control",
     component: () => import("../views/Control"),
-	  meta: {
-		  showTab: true
-	  }
+    meta: {
+      showTab: true
+    }
   }
 ];
 
