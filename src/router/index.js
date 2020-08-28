@@ -1,28 +1,43 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import EnvDetail from "../views/EnvDetail";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
+    redirect: "/home"
+  },
+  {
+    path: "/home",
     name: "Home",
-    component: Home
+    component: Home,
+	  meta: {
+		  showTab: true//如果需要显示就加上这个
+	  }
+  },
+  {
+    path: "/home/:category",
+    name: "EnvironmentDetail",
+	  component: EnvDetail
   },
   {
     path: "/about",
     name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    component: () => import("../views/About.vue"),
+	  meta: {
+		  showTab: true
+	  }
   },
   {
     path: "/control",
     name: "Control",
-    component: () => import("../views/Control")
+    component: () => import("../views/Control"),
+	  meta: {
+		  showTab: true
+	  }
   }
 ];
 
