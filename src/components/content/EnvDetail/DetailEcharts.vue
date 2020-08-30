@@ -1,11 +1,11 @@
 <template>
   <div class="analyzeSystem">
-    <div class="my-chart"></div>
+    <div class="my-chart" ref="myEchart"></div>
   </div>
 </template>
 
 <script>
-const echarts = require("echarts");
+import echarts from "echarts";
 export default {
   name: "Detail",
   data() {
@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     initChart() {
-      this.chart = echarts.init(document.querySelector(".my-chart"));
+      this.chart = echarts.init(this.$refs.myEchart);
       this.chart.setOption({
         tooltip: {},
         xAxis: {
@@ -29,7 +29,8 @@ export default {
           {
             name: "销量",
             type: "line",
-            data: [5, 20, 36, 10, 10, 20]
+            symbolSize: 10,
+            data: [20,23,25,26,28,26,25,23,21,20]
           }
         ]
       });

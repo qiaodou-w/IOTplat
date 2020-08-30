@@ -3,18 +3,21 @@
     <van-tabbar-item
       name="home"
       to="/"
+      replace
       :icon="active === 'home' ? 'wap-home' : 'wap-home-o'"
       >主页</van-tabbar-item
     >
     <van-tabbar-item
       name="control"
       to="/control"
+      replace
       :icon="active === 'control' ? 'setting' : 'setting-o'"
       >控制</van-tabbar-item
     >
     <van-tabbar-item
       name="about"
       to="/about"
+      replace
       :icon="active === 'about' ? 'phone' : 'phone-o'"
       >关于</van-tabbar-item
     >

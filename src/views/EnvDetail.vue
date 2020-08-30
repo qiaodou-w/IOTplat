@@ -6,7 +6,7 @@
       @click-left="back"
     ></van-nav-bar>
     <detail></detail>
-    <h2>{{ this.$route.params.category }}详情页</h2>
+    <h2>{{ cate }}详情页</h2>
   </div>
 </template>
 
@@ -16,6 +16,15 @@ export default {
   name: "EnvDetail",
   components: {
     Detail
+  },
+  data() {
+    return {
+      cate: null
+    }
+  },
+  mounted() {
+    this.cate = this.$route.params.category
+    
   },
   methods: {
     back() {

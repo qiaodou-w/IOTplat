@@ -9,7 +9,7 @@
 </template>
 
 <script>
-const moment = require("moment");
+import moment from "moment"
 import EnvironmentInfo from "../components/content/Info";
 
 export default {
@@ -21,16 +21,20 @@ export default {
           img: require("@/assets/img/temp-n.png"),
           text: "温度",
           name: "temperature",
+          units: "℃",
           data: {
-            time: moment().format("MM-DD HH:mm:ss")
+            time: moment().format("MM-DD HH:mm:ss"),
+            data: [20,23,25,26,28,26,25,23,21,20]
           }
         },
         humidity: {
           img: require("@/assets/img/shidu2.png"),
           text: "湿度",
           name: "humidity",
+          units: "%",
           data: {
-            time: moment().format("MM-DD HH:mm:ss")
+            time: moment().format("MM-DD HH:mm:ss"),
+            data: [50,56,57]
           }
         }
       }
@@ -49,4 +53,5 @@ export default {
   align-items: center;
   flex-wrap: wrap;
 }
+
 </style>

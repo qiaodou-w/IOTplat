@@ -2,7 +2,7 @@
   <div class="info" @click="jump">
     <img :src="src.img" :alt="src.text" />
     <div class="text">
-      <p id="name">{{ src.text + ":" + "22℃" }}</p>
+      <p id="name">{{ src.text + ":" + src.data.data[0] + src.units }}</p>
       <p id="time">上次更新时间:{{ src.data.time }}</p>
     </div>
   </div>
