@@ -12,6 +12,8 @@
 
 <script>
 import Detail from "../components/content/EnvDetail/DetailEcharts";
+// import {requset} from "../network/request";
+
 export default {
   name: "EnvDetail",
   components: {
@@ -20,11 +22,10 @@ export default {
   data() {
     return {
       cate: null
-    }
+    };
   },
   mounted() {
-    this.cate = this.$route.params.category
-    
+    this.cate = this.$route.params.category;
   },
   methods: {
     back() {

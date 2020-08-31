@@ -29,7 +29,7 @@ export default {
 }
 
 .van-nav-bar {
-  background: #1989FA;
+  background: #1989fa;
 }
 
 .van-nav-bar .van-nav-bar__title {

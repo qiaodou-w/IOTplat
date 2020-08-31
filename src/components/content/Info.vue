@@ -1,6 +1,6 @@
 <template>
   <div class="info" @click="jump">
-    <img :src="src.img" :alt="src.text" />
+    <img :src="imgSrc" :alt="src.text" />
     <div class="text">
       <p id="name">{{ src.text + ":" + src.data.data[0] + src.units }}</p>
       <p id="time">上次更新时间:{{ src.data.time }}</p>
@@ -11,6 +11,11 @@
 <script>
 export default {
   name: "Info",
+  data() {
+    return {
+      imgSrc: require("@/assets/img/" + this.src.img)
+    }
+  },
   props: {
     src: {
       type: Object,

@@ -14,7 +14,7 @@ export default {
     };
   },
   mounted() {
-    this.initChart()
+    this.initChart();
   },
   methods: {
     initChart() {
@@ -30,7 +30,7 @@ export default {
             name: "销量",
             type: "line",
             symbolSize: 10,
-            data: [20,23,25,26,28,26,25,23,21,20]
+            data: [20, 23, 25, 26, 28, 26, 25, 23, 21, 20]
           }
         ]
       });
@@ -40,8 +40,8 @@ export default {
 </script>
 
 <style>
-  .my-chart {
-    height: 375px;
-    width: 375px;
-  }
+.my-chart {
+  height: 375px;
+  width: 375px;
+}
 </style>
