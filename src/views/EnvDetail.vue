@@ -5,14 +5,14 @@
       :title="this.$route.params.category"
       @click-left="back"
     ></van-nav-bar>
-    <detail></detail>
+    <detail v-if="envData.length" :env-data="envData"></detail>
     <h2>{{ cate }}详情页</h2>
   </div>
 </template>
 
 <script>
 import Detail from "../components/content/EnvDetail/DetailEcharts";
-// import {requset} from "../network/request";
+import { getEnvData } from "../network/envdetail";
 
 export default {
   name: "EnvDetail",
@@ -21,11 +21,18 @@ export default {
   },
   data() {
     return {
-      cate: null
+      cate: null,
+      envData: []
     };
   },
-  mounted() {
+  created() {
     this.cate = this.$route.params.category;
+    getEnvData(this.cate).then(value => {
+      this.envData = value.data
+    });
+  },
+  mounted() {
+
   },
   methods: {
     back() {

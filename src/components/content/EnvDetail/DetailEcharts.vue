@@ -10,11 +10,21 @@ export default {
   name: "Detail",
   data() {
     return {
-      chart: null
+      chart: null,
+      envValue: []
     };
   },
   mounted() {
+    this.transData()
     this.initChart();
+  },
+  props: {
+    envData: {
+      type: Array,
+      default(){
+        return []
+      }
+    }
   },
   methods: {
     initChart() {
@@ -22,18 +32,23 @@ export default {
       this.chart.setOption({
         tooltip: {},
         xAxis: {
-          data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+          name:"时间",
+          data: ["8:15","8:25","8:35","8:45","8:55","9:05","9:15","9:25"]
         },
-        yAxis: {},
+        yAxis: {
+          name: "温度"
+        },
         series: [
           {
-            name: "销量",
             type: "line",
             symbolSize: 10,
-            data: [20, 23, 25, 26, 28, 26, 25, 23, 21, 20]
+            data: this.envValue
           }
         ]
       });
+    },
+    transData() {
+      this.envData.forEach(value => this.envValue.push(value.value))
     }
   }
 };

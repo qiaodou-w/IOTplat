@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       imgSrc: require("@/assets/img/" + this.src.img)
-    }
+    };
   },
   props: {
     src: {
