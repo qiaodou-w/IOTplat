@@ -5,8 +5,8 @@
       :title="this.$route.params.category"
       @click-left="back"
     ></van-nav-bar>
-    <detail v-if="envData.length" :env-data="envData"></detail>
-    <h2>{{ cate }}详情页</h2>
+    <h4>{{ cate }}详情页</h4>
+    <detail :env-data="envData"></detail>
   </div>
 </template>
 
@@ -28,12 +28,10 @@ export default {
   created() {
     this.cate = this.$route.params.category;
     getEnvData(this.cate).then(value => {
-      this.envData = value.data
+      this.envData = value.data;
     });
   },
-  mounted() {
-
-  },
+  mounted() {},
   methods: {
     back() {
       this.$router.back();

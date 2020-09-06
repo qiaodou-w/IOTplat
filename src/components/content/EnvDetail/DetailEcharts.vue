@@ -11,29 +11,29 @@ export default {
   data() {
     return {
       chart: null,
-      envValue: []
+      envValue: [],
+      envDate: []
     };
   },
   mounted() {
-    this.transData()
-    this.initChart();
+    this.chart = echarts.init(this.$refs.myEchart);
+    this.chart.showLoading();
   },
   props: {
     envData: {
       type: Array,
-      default(){
-        return []
+      default() {
+        return [];
       }
     }
   },
   methods: {
     initChart() {
-      this.chart = echarts.init(this.$refs.myEchart);
       this.chart.setOption({
         tooltip: {},
         xAxis: {
-          name:"时间",
-          data: ["8:15","8:25","8:35","8:45","8:55","9:05","9:15","9:25"]
+          name: "时间",
+          data: this.envDate
         },
         yAxis: {
           name: "温度"
@@ -48,7 +48,27 @@ export default {
       });
     },
     transData() {
-      this.envData.forEach(value => this.envValue.push(value.value))
+      this.envData.forEach(value => {
+        this.envValue.push(value.value);
+        this.envDate.push(value.date);
+      });
+    }
+  },
+  watch: {
+    envData: function() {
+      this.transData();
+      this.chart.hideLoading();
+      this.initChart();
+      // this.chart.setOption({
+      //   xAxis: {
+      //     data: this.envDate
+      //   },
+      //   series: [
+      //     {
+      //       data: this.envValue
+      //     }
+      //   ]
+      // })
     }
   }
 };

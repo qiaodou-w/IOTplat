@@ -2,7 +2,7 @@
   <div class="info" @click="jump">
     <img :src="imgSrc" :alt="src.text" />
     <div class="text">
-      <p id="name">{{ src.text + ":" + src.data.data[0] + src.units }}</p>
+      <p id="name">{{ src.text + src.data.data + src.units }}</p>
       <p id="time">上次更新时间:{{ src.data.time }}</p>
     </div>
   </div>
