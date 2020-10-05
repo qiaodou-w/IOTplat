@@ -25,12 +25,12 @@ export default {
       humidity: null
     };
   },
-  created() {
+  created() {},
+  mounted() {
     getHomeData().then(value => {
       this.envInfo = value.data.EnvironmentInfo;
     });
   },
-  mounted() {},
   components: {
     EnvironmentInfo
   }

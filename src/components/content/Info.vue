@@ -44,8 +44,9 @@ p {
   margin: 5px;
   width: 350px;
   height: 100px;
-  border: 1px solid #39a9ed;
   border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 
   font-size: 16px;
 }
