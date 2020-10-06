@@ -29,6 +29,8 @@
 import Vue from 'vue';
 import { Form, Field } from 'vant';
 
+import {login} from "../network/login"
+
 Vue.use(Form);
 Vue.use(Field);
 export default {
@@ -40,6 +42,7 @@ export default {
   },
   methods: {
     onSubmit(values) {
+      login(values)
       console.log('submit', this.user);
       console.log( values )
     },
