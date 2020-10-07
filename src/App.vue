@@ -15,7 +15,7 @@ export default {
   components: { MainTabBar },
   data() {
     return {};
-  }
+  },
 };
 </script>
 
@@ -29,6 +29,7 @@ export default {
   height: 100vh;
   background-color: #f3f3f7;
 }
+
 
 .van-nav-bar {
   background: #1989fa;

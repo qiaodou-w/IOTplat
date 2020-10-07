@@ -2,7 +2,7 @@
   <van-tabbar v-model="active">
     <van-tabbar-item
       name="home"
-      to="/"
+      to="/home"
       replace
       :icon="active === 'home' ? 'wap-home' : 'wap-home-o'"
       >主页</van-tabbar-item
